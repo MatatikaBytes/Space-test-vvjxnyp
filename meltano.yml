@@ -1,3 +1,19 @@
 version: 1
 send_anonymous_usage_stats: true
 project_id: fd965b89-2b59-4a3b-b505-c0db59ade745
+plugins:
+  extractors:
+  - name: tap-meltano
+    pip_url: git+https://github.com/Matatika/tap-meltano@v0.1.1
+  transforms:
+  - name: dbt-meltano
+    variant: meltano
+    pip_url: https://github.com/Matatika/dbt-tap-meltano@v0.1.2
+  transformers:
+  - name: dbt
+    pip_url: dbt==0.20.2
+  files:
+  - name: dbt
+    pip_url: git+https://github.com/Matatika/files-dbt@v0.20.x.0
+  - name: analyze-meltano
+    pip_url: git+https://github.com/Matatika/analyze-meltano@v0.1.1
