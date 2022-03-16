@@ -5,6 +5,10 @@ plugins:
   extractors:
   - name: tap-meltano
     pip_url: git+https://github.com/Matatika/tap-meltano@v0.1.1
+  loaders:
+  - name: target-postgres
+    variant: meltano
+    pip_url: git+https://github.com/Matatika/target-postgres@v0.1.0
   transforms:
   - name: dbt-meltano
     variant: meltano
